@@ -1,0 +1,44 @@
+{% macro render_field(field) %}
+<div class="form-group">
+    {{ field.label(class="form-control-label") }}
+    {% if field.errors %}
+    {{ field(class="form-control form-control-lg is-invalid") }}
+    <div class="invalid-feedback">
+        {% for error in field.errors %}
+        <span>{{ error }}</span>
+        {% endfor %}
+    </div>
+    {% else %}
+    {{ field(class="form-control form-control-lg") }}
+    {% endif %}
+</div>
+{% endmacro %}
+
+{% macro print_res(key, value) %}
+{{ key | capitalize | safe }}: {{ value | safe }}
+    <br>
+{% endmacro %}
+
+
+
+{% macro print_field(key, value) %}
+    {% if value %}
+        <b><u>{{ key|capitalize }}</u></b><br>
+        {{ value }}
+        <br><br>
+    {% endif %}
+{% endmacro %}
+
+
+{% macro search_tag(value) %}
+
+<a class="btn btn-primary mb-4" href="{{ url_for('search_results', query=value) }}">
+    {{ value|capitalize }}</a>
+
+{% endmacro %}
+
+{% macro display_video(id) %}
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/{{id}}?rel=0&showinfo=0&autohide=0&modestbranding=1&showinfo=0">
+</iframe>
+<br>
+{% endmacro %}

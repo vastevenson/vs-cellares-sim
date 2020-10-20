@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<p>Please input a simulation duration between 0 and 10 seconds:</p>
+
+<input id="numb">
+
+<button type="button" style="display:block;" onclick="startAction()" id="startButton">Start</button>
+<button type="button" style="display:none;" onclick="stopAction()" id="stopButton">Stop</button>
+
+<p id="status"></p>
+
+<script src="{{url_for('static', filename='main.js')}}"></script>
+
+{% endblock content %}
