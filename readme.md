@@ -10,8 +10,8 @@ Date:
 How to run app:
 
 0. Make sure all dependencies in requirements.txt are installed
-1. Have an Elasticsearch instance running at localhost:9200
-2. Run run.py with Python 3.6+
+1. Have an Elasticsearch instance running at localhost:9200 (tested on Elasticsearch v7.9)
+2. Run run.py with Python 3.6
 3. Navigate to localhost:5000
 4. Enter a time for simulation (seconds)
 5. Click Start
